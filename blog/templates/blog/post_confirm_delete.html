@@ -1,0 +1,14 @@
+{% extends "blog/layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="post">
+            {% csrf_token %}
+            <h2> are you sure you want to delete {{ object.title }} post ? </h2>
+            <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit" >Yes, Delete</button>
+                <a class="btn btn-secondary" href="{% url 'post-detail' object.id %}"> cancel </a>
+            </div>
+        </form>
+
+    </div>
+{% endblock %}
